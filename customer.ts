@@ -8,6 +8,15 @@ class Customer{
     this.address = address;
     this.mobile = mobile;
   }
+  get customer_details(): string{
+    return this.name;
+  }
+
+  set customer_details(Newname: string){
+    this.name = Newname;
+  }
+
+
 }
 
 class CustomerMain extends Customer{
