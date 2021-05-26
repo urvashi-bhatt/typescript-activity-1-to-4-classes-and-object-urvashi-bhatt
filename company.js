@@ -44,20 +44,6 @@ var Company = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    Object.defineProperty(Company.prototype, "main", {
-        get: function () {
-            return this._employees;
-        },
-        enumerable: false,
-        configurable: true
-    });
-    Object.defineProperty(Company.prototype, "team", {
-        get: function () {
-            return this._teamlead;
-        },
-        enumerable: false,
-        configurable: true
-    });
     return Company;
 }());
 var CompanyMain = /** @class */ (function (_super) {
@@ -72,6 +58,9 @@ var CompanyMain = /** @class */ (function (_super) {
         //   console.log(address);
         //   console.log(mobiles);
         // }
+        get: function () {
+            return this._employees;
+        },
         set: function (newEmp) {
             this._employees = newEmp;
         },
@@ -79,6 +68,9 @@ var CompanyMain = /** @class */ (function (_super) {
         configurable: true
     });
     Object.defineProperty(CompanyMain.prototype, "team", {
+        get: function () {
+            return this._teamlead;
+        },
         set: function (newTeam) {
             this._teamlead = newTeam;
         },
@@ -92,8 +84,10 @@ var dd = new CompanyMain();
 comp.company_details = "L&T Technology Services";
 dd.main = "Ravi,Ram,Krishna,Shakir,Thomas";
 dd.team = "Thomas";
+var mystring = dd.main;
+var stringSplit = mystring.split(",");
 if (comp.company_details) {
     console.log("Name: " + "" + comp.company_details);
-    console.log("Employees; " + dd.main);
-    console.log("Lead: " + " " + dd.team);
+    console.log("Employees: " + stringSplit);
+    console.log("Lead:" + " " + dd.team);
 }
